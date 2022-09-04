@@ -1,0 +1,16 @@
+.profile__button-second {
+  width: 150px;
+  height: 50px;
+  background-color: black;
+  border: 2px solid #FFFFFF;
+  border-radius: 2px;
+  background-image: url(../../../vendor/background__plus.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+.profile__button-second:hover {
+  opacity: 0.6;
+  transition: 0.3s;
+}

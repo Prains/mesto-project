@@ -1,0 +1,78 @@
+@import "../vendor/normalize.css";
+/*pages*/
+@import "../blocks/page/page.css";
+/*body*/
+@import "../blocks/body/body.css";
+/*header*/
+@import "../blocks/header/header.css";
+/*fonts*/
+@import "../vendor/fonts.css";
+/*profile*/
+@import "../blocks/profile/profile.css";
+@import "../blocks/profile/__picture-wrapper/profile__picture-wrapper.css";
+@import "../blocks/profile/__grid/profile__grid.css";
+@import "../blocks/profile/__button/profile__button.css";
+@import "../blocks/profile/__button-second/profile__button-second.css";
+@import "../blocks/profile/__picture/profile__picture.css";
+@import "../blocks/profile/__title/profile__title.css";
+@import "../blocks/profile/__subtitle/profile__subtitle.css";
+
+* {
+}
+
+.elements {
+  margin-top: 51px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 20px;
+  column-gap: 17px;
+}
+
+.elements__element {
+  width: 282px;
+  height: 361px;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+.element__text-wrapper {
+  background-color: #fff;
+  display: flex;
+
+}
+
+.element__heart {
+  background-image: url(../images/heart.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 22px;
+  height: 19px;
+  border: white;
+}
+
+.element__heart:hover {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.element__heart:active {
+  background-color: black;
+}
+
+
+.element__text {
+  margin: 0 auto;
+  width: 246px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.element__image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+}
