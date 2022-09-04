@@ -16,3 +16,12 @@
   opacity: 0.6;
   transition: 0.3s;
 }
+
+@media screen and (max-width: 767px) {
+
+.profile__button {
+  width: 18px;
+  height: 18px;
+}
+
+}
