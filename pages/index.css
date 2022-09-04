@@ -25,5 +25,11 @@
 @import "../blocks/elements/__image/element__image.css";
 /*footer*/
 @import "../blocks/footer/footer.css";
-
-* {}
+/*modal*/
+@import "../blocks/modal/modal.css";
+@import "../blocks/overlay/overlay.css";
+@import "../blocks/modal/__title/modal__title.css";
+@import "../blocks/modal/__text/modal__text.css";
+@import "../blocks/modal/__button/modal__button.css";
+@import "../blocks/modal/__close/modal__close.css";
+@import "../blocks/modal/__opened/modal__opened.css";
