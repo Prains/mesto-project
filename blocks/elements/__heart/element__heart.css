@@ -5,6 +5,7 @@
   min-width: 22px;
   min-height: 19px;
   border: white;
+  margin-right: 15px;
 }
 
 .element__heart:hover {

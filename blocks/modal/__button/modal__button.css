@@ -4,6 +4,7 @@
   background-color: black;
   color: white;
   cursor: pointer;
+  margin-bottom: 37px;
 }
 
 .modal__button:hover {

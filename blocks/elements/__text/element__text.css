@@ -1,9 +1,6 @@
 .element__text {
   margin: 0 auto;
-  max-width: 246px;
-  max-height: 23px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 25px;
 }
