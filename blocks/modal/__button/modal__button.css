@@ -1,8 +1,9 @@
 .modal__button {
-  width: 358px;
-  height: 50px;
+  min-width: 358px;
+  min-height: 50px;
   background-color: black;
   color: white;
+  cursor: pointer;
 }
 
 .modal__button:hover {
@@ -13,8 +14,8 @@
 @media screen and (max-width: 767px) {
 
 .modal__button {
-  width: 238px;
-  height: 46px;
+  min-width: 238px;
+  min-height: 46px;
 }
 
 }

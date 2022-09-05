@@ -1,7 +1,7 @@
 .modal__text {
   margin: 0 auto;
-  width: 358px;
-  height: 14px;
+  max-width: 358px;
+  max-height: 14px;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
@@ -17,8 +17,8 @@
 
 @media screen and (max-width: 767px) {
   .modal__text {
-    width: 238px;
-  height: 14px;
+    max-width: 238px;
+    max-height: 14px;
     font-size: 14px;
     line-height: 17px;
   }

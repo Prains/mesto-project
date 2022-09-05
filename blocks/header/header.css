@@ -1,6 +1,6 @@
 
 .header {
-  height: 74px;
+  min-height: 74px;
   max-width: 880px;
   margin: 0 auto;
   margin-top: 45px;
@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 767px) {
   .header {
-    height: 56px;
+    min-height: 56px;
     margin-top: 28px;
     margin-bottom: 42px;
   }
