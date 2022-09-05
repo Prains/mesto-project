@@ -2,6 +2,9 @@
   position: relative;
   top: -55px;
   left: 230px;
+  background-image: url(../../../images/modal__close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .modal__close:hover {
