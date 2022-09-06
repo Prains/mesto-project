@@ -1,5 +1,6 @@
 .modal {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   background: #FFFFFF;

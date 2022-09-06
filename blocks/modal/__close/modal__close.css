@@ -1,13 +1,16 @@
 .modal__close {
-  position: relative;
-  top: -55px;
-  left: 230px;
+  position: absolute;
   background-image: url(../../../images/modal__close.svg);
   width: 32px;
   height: 32px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  border: none;
+  background-color: black;
+  top: -40px;
+  right: -40px;
+  cursor: pointer;
 }
 
 .modal__close:hover {
@@ -20,8 +23,8 @@
 .modal__close {
   width: 20px;
   height: 20px;
-  left: 120px;
-  top: -60px;
+  top: -36px;
+  right: 0px;
 }
 
 }
