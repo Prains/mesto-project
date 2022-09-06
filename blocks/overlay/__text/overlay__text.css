@@ -1,4 +1,4 @@
-.modal__text {
+.overlay__text {
   margin: 0 auto;
   font-weight: 400;
   font-size: 14px;
@@ -11,15 +11,13 @@
   width: 100%;
 }
 
-.modal__text:last-of-type {
+.overlay__text:last-of-type {
   margin-bottom: 48px;
 }
 
 @media screen and (max-width: 767px) {
-  .modal__text {
+  .overlay__text {
     max-width: 238px;
     max-height: 14px;
-    font-size: 14px;
-    line-height: 17px;
   }
 }

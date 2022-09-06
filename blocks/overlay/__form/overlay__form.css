@@ -1,4 +1,4 @@
-.modal__form {
+.overlay__form {
   display: flex;
   flex-direction: column;
 }

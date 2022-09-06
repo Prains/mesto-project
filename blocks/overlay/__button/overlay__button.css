@@ -1,0 +1,27 @@
+.overlay__button {
+  min-width: 358px;
+  min-height: 50px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 37px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  border: none;
+}
+
+.overlay__button:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 767px) {
+  .overlay__button {
+    min-width: 238px;
+    min-height: 46px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

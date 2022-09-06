@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mesto</title>
+  <title>Проект Место</title>
   <link rel="stylesheet" href='./pages/index.css'>
 </head>
-<header class="header">
-  <img src="./images/header__logo.svg" alt='image' class="header__logo">
-</header>
 
 <body class="body">
+  <header class="header">
+    <img src="./images/header__logo.svg" alt='image' class="header__logo">
+  </header>
   <main class="page">
     <section class="profile">
       <div class="profile__picture-wrapper">
@@ -19,71 +19,72 @@
         <div class="profile__grid">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <p class="profile__subtitle">Исследователь океана</p>
-          <button type="button" name="button" class="profile__button"></button>
+          <button type="button" name="profile__button" class="profile__button"></button>
         </div>
       </div>
-      <button type="button" name="button" class="profile__button-second"></button>
+      <button type="button" name="profile__add-button" class="profile__add-button"></button>
     </section>
     <section class="elements">
       <div class="elements__element">
         <img src="./images/argent.webp" alt="image" class="element__image">
         <div class="element__text">
-          <h3 class="element__title">Аргент Д'Нур</h3>
-          <button type="button" name="button" class="element__heart"></button>
+          <h2 class="element__title">Аргент Д'Нур</h2>
+          <button type="button" name="element__heart" class="element__heart"></button>
         </div>
       </div>
       <div class="elements__element">
         <img src="./images/argent.webp" alt="image" class="element__image">
         <div class="element__text">
-          <h3 class="element__title">Аргент Д'Нур</h3>
-          <button type="button" name="button" class="element__heart"></button>
+          <h2 class="element__title">Аргент Д'Нур</h2>
+          <button type="button" name="element__heart" class="element__heart"></button>
         </div>
       </div>
       <div class="elements__element">
         <img src="./images/argent.webp" alt="image" class="element__image">
         <div class="element__text">
-          <h3 class="element__title">Аргент Д'Нур</h3>
-          <button type="button" name="button" class="element__heart"></button>
+          <h2 class="element__title">Аргент Д'Нур</h2>
+          <button type="button" name="element__heart" class="element__heart"></button>
         </div>
       </div>
       <div class="elements__element">
         <img src="./images/argent.webp" alt="image" class="element__image">
         <div class="element__text">
-          <h3 class="element__title">Аргент Д'Нур</h3>
-          <button type="button" name="button" class="element__heart"></button>
+          <h2 class="element__title">Аргент Д'Нур</h2>
+          <button type="button" name="element__heart" class="element__heart"></button>
         </div>
       </div>
       <div class="elements__element">
         <img src="./images/argent.webp" alt="image" class="element__image">
         <div class="element__text">
-          <h3 class="element__title">Аргент Д'Нур</h3>
-          <button type="button" name="button" class="element__heart"></button>
+          <h2 class="element__title">Аргент Д'Нур</h2>
+          <button type="button" name="element__heart" class="element__heart"></button>
         </div>
       </div>
       <div class="elements__element">
         <img src="./images/argent.webp" alt="image" class="element__image">
         <div class="element__text">
-          <h3 class="element__title">Аргент Д'Нур</h3>
-          <button type="button" name="button" class="element__heart"></button>
+          <h2 class="element__title">Аргент Д'Нур</h2>
+          <button type="button" name="element__heart" class="element__heart"></button>
         </div>
       </div>
     </section>
   </main>
-</body>
-<footer class="footer">
-  <h3 class="footer__text">© 2020 Mesto Russia</h3>
-</footer>
-<div class="overlay">
-  <div class="modal">
-    <button type="button" name="button" class="modal__close"></button>
-    <h3 class="modal__title">Редактировать профиль</h3>
-    <form class="modal__form" action="index.html" method="post">
-    <input type="text" class="modal__text" value="Жак-Ив Кусто">
-    <input type="text" class="modal__text" value="Исследователь океана">
-    <button type="button" name="button" class="modal__button">Сохранить</button>
-    </form>
+  <footer class="footer">
+    <p class="footer__text">© 2020 Mesto Russia</p>
+  </footer>
+  <div class="overlay">
+    <div class="overlay__modal">
+      <button type="button" name="overlay__close" class="overlay__close"></button>
+      <h3 class="overlay__title">Редактировать профиль</h3>
+      <form class="overlay__form" action="index.html" method="post" name="overlay__form">
+      <input type="text" class="overlay__text" value="Жак-Ив Кусто">
+      <input type="text" class="overlay__text" value="Исследователь океана">
+      <button type="submit" name="overlay__button" class="overlay__button">Сохранить</button>
+      </form>
+    </div>
   </div>
-</div>
+</body>
+
 
 
 </html>

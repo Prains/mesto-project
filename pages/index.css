@@ -13,7 +13,7 @@
 @import "../blocks/profile/__picture-wrapper/profile__picture-wrapper.css";
 @import "../blocks/profile/__grid/profile__grid.css";
 @import "../blocks/profile/__button/profile__button.css";
-@import "../blocks/profile/__button-second/profile__button-second.css";
+@import "../blocks/profile/__add-button/profile__add-button.css";
 @import "../blocks/profile/__picture/profile__picture.css";
 @import "../blocks/profile/__title/profile__title.css";
 @import "../blocks/profile/__subtitle/profile__subtitle.css";
@@ -28,11 +28,11 @@
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__text/footer__text.css";
 /*modal*/
-@import "../blocks/modal/modal.css";
+@import "../blocks/overlay/__modal/overlay__modal.css";
+@import "../blocks/overlay/__title/overlay__title.css";
+@import "../blocks/overlay/__text/overlay__text.css";
 @import "../blocks/overlay/overlay.css";
-@import "../blocks/modal/__title/modal__title.css";
-@import "../blocks/modal/__text/modal__text.css";
-@import "../blocks/modal/__button/modal__button.css";
-@import "../blocks/modal/__close/modal__close.css";
-@import "../blocks/modal/__opened/modal__opened.css";
-@import "../blocks/modal/__form/modal__form.css";
+@import "../blocks/overlay/opened/opened.css";
+@import "../blocks/overlay/__form/overlay__form.css";
+@import "../blocks/overlay/__close/overlay__close.css";
+@import "../blocks/overlay/__button/overlay__button.css";

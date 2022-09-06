@@ -2,10 +2,13 @@
   background-image: url(../../../images/heart.svg);
   background-repeat: no-repeat;
   background-position: center;
+  background-color: transparent;
   min-width: 22px;
   min-height: 19px;
   border: white;
-  margin-right: 15px;
+  margin: 0;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 .element__heart:hover {
