@@ -9,6 +9,7 @@
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: auto;
   box-sizing: border-box;
   cursor: pointer;
 }
