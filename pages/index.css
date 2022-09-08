@@ -1,4 +1,6 @@
 @import "../vendor/normalize.css";
+/*fonts*/
+@import "../vendor/fonts.css";
 /*pages*/
 @import "../blocks/page/page.css";
 /*body*/
@@ -6,8 +8,6 @@
 /*header*/
 @import "../blocks/header/header.css";
 @import "../blocks/header/__logo/header__logo.css";
-/*fonts*/
-@import "../vendor/fonts.css";
 /*profile*/
 @import "../blocks/profile/profile.css";
 @import "../blocks/profile/__picture-wrapper/profile__picture-wrapper.css";
@@ -32,7 +32,7 @@
 @import "../blocks/overlay/__title/overlay__title.css";
 @import "../blocks/overlay/__text/overlay__text.css";
 @import "../blocks/overlay/overlay.css";
-@import "../blocks/overlay/opened/opened.css";
+@import "../blocks/overlay/opened/overlay_opened.css";
 @import "../blocks/overlay/__form/overlay__form.css";
 @import "../blocks/overlay/__close/overlay__close.css";
 @import "../blocks/overlay/__button/overlay__button.css";

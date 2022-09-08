@@ -2,17 +2,13 @@
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
-  margin: 0;
-  margin-top: 34px;
-  margin-bottom: 54px;
-  margin-right: 39px;
+  margin: 34px 39px 34px 0;
 }
 
 @media screen and (max-width: 767px) {
   .overlay__title {
     font-size: 18px;
     line-height: 22px;
-    margin: 0;
     margin-top: 25px;
     margin-bottom: 75px;
   }
