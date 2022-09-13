@@ -11,9 +11,6 @@
 @media screen and (max-width: 426px) {
   .elements {
     margin-top: 36px;
-    margin-bottom: 20px;
-  }
-  .elements:last-of-type {
     margin-bottom: 48px;
   }
 }

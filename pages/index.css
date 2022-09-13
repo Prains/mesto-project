@@ -19,11 +19,11 @@
 @import "../blocks/profile/__subtitle/profile__subtitle.css";
 /*elements*/
 @import "../blocks/elements/elements.css";
-@import "../blocks/elements/__element/elements__element.css";
-@import "../blocks/elements/__heart/element__heart.css";
-@import "../blocks/elements/__text/element__text.css";
-@import "../blocks/elements/__image/element__image.css";
-@import "../blocks/elements/__title/element__title.css";
+@import "../blocks/element/element.css";
+@import "../blocks/element/__text/element__text.css";
+@import "../blocks/element/__image/element__image.css";
+@import "../blocks/element/__heart/element__heart.css";
+@import "../blocks/element/__title/element__title.css";
 /*footer*/
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__text/footer__text.css";
@@ -32,7 +32,7 @@
 @import "../blocks/overlay/__title/overlay__title.css";
 @import "../blocks/overlay/__text/overlay__text.css";
 @import "../blocks/overlay/overlay.css";
-@import "../blocks/overlay/opened/overlay_opened.css";
+@import "../blocks/overlay/__opened/overlay__opened.css";
 @import "../blocks/overlay/__form/overlay__form.css";
 @import "../blocks/overlay/__close/overlay__close.css";
 @import "../blocks/overlay/__button/overlay__button.css";
