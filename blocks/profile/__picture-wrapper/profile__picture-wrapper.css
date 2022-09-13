@@ -8,6 +8,8 @@
 .profile__picture-wrapper {
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   margin-bottom: 36px;
+  vertical-align: center;
 }
 }
