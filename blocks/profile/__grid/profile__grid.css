@@ -2,6 +2,8 @@
   display: grid;
   grid-row-gap: 16px;
   grid-column-gap: 18px;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 767px) {
@@ -9,6 +11,7 @@
 .profile__grid {
   grid-row-gap: 10px;
   grid-column-gap: 14px;
+  max-width: 282px;
 }
 
 }
