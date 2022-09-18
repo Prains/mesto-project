@@ -25,48 +25,6 @@
       <button type="button" name="profile__add-button" class="profile__add-button"></button>
     </section>
     <section class="elements">
-      <div class="element">
-        <img src="./images/argent.webp" alt="аргент днур " class="element__image">
-        <div class="element__text">
-          <h2 class="element__title">Аргент Д'Нур</h2>
-          <button type="button" name="element__heart" class="element__heart"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./images/argent.webp" alt="аргент днур" class="element__image">
-        <div class="element__text">
-          <h2 class="element__title">Аргент Д'Нур</h2>
-          <button type="button" name="element__heart" class="element__heart"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./images/argent.webp" alt="аргент днур" class="element__image">
-        <div class="element__text">
-          <h2 class="element__title">Аргент Д'Нур</h2>
-          <button type="button" name="element__heart" class="element__heart"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./images/argent.webp" alt="аргент днур" class="element__image">
-        <div class="element__text">
-          <h2 class="element__title">Аргент Д'Нур</h2>
-          <button type="button" name="element__heart" class="element__heart"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./images/argent.webp" alt="аргент днур" class="element__image">
-        <div class="element__text">
-          <h2 class="element__title">Аргент Д'Нур</h2>
-          <button type="button" name="element__heart" class="element__heart"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./images/argent.webp" alt="аргент днур" class="element__image">
-        <div class="element__text">
-          <h2 class="element__title">Аргент Д'Нур</h2>
-          <button type="button" name="element__heart" class="element__heart"></button>
-        </div>
-      </div>
     </section>
   </main>
   <footer class="footer">
@@ -74,15 +32,36 @@
   </footer>
   <div class="overlay">
     <div class="overlay__modal">
-      <button type="button" name="overlay__close" class="overlay__close"></button>
+      <button type="button" name="overlay__close" class="overlay__close" id="#modal__form"></button>
       <h3 class="overlay__title">Редактировать профиль</h3>
       <form class="overlay__form" action="index.html" method="post" name="overlay__form">
-      <input type="text" class="overlay__text" name="name" value="Жак-Ив Кусто">
-      <input type="text" class="overlay__text" name="description" value="Исследователь океана">
-      <button type="submit" name="overlay__button" class="overlay__button">Сохранить</button>
+        <input type="text" class="overlay__text" id="#modalname" name="name" value="Жак-Ив Кусто">
+        <input type="text" class="overlay__text" id="#modaldesc" name="description" value="Исследователь океана">
+        <button type='submit' name="overlay__button" class="overlay__button">Сохранить</button>
       </form>
     </div>
   </div>
+  <div class="overlay overlay_popup">
+    <div class="overlay__modal">
+      <button type="button" name="overlay__close" class="overlay__close overlay_popup__close"></button>
+      <h3 class="overlay__title overlay_popup__title">Новое место</h3>
+      <form class="overlay__form" action="index.html" method="post" name="overlay__form">
+        <input type="text" class="overlay__text" id="#popuptitle" name="name" placeholder="Название">
+        <input type="text" class="overlay__text" id="#popuplink" name="description" placeholder="Ссылка на картинку">
+        <button type='submit' name="overlay__button" class="overlay__button overlay_popup__submit">Создать</button>
+      </form>
+    </div>
+  </div>
+  <template class="element-template">
+    <div class="element">
+      <img src="" alt="" class="element__image">
+      <div class="element__text">
+        <h2 class="element__title"></h2>
+        <button type="button" name="element__heart" class="element__heart"></button>
+      </div>
+    </div>
+  </template>
+  <script src="./pages/index.js" charset="utf-8"></script>
 </body>
 
 
