@@ -1,0 +1,15 @@
+.overlay_photo__close {
+  background-image: url(../../../../images/modal__close.svg);
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  align-self: flex-end;
+  position: relative;
+  left: 44px;
+  bottom: 8px;
+}

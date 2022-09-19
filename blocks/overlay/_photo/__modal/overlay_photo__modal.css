@@ -1,0 +1,4 @@
+.overlay_photo__modal {
+  display: flex;
+  flex-direction: column;
+}
