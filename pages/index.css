@@ -42,6 +42,7 @@
 @import "../blocks/overlay/_popup/overlay_popup.css";
 @import "../blocks/overlay/_popup/__title/overlay_popup__title.css";
 /*modal3*/
+@import "../blocks/overlay/_popup/overlay_photo__popup.css";
 @import "../blocks/overlay/_photo/__close/overlay_photo__close.css";
 @import "../blocks/overlay/_photo/__modal/overlay_photo__modal.css";
 @import "../blocks/overlay/_photo/__img/photo__img.css";

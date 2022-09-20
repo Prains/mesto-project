@@ -1,8 +1,7 @@
 .elements {
   margin-top: 51px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
   row-gap: 20px;
   column-gap: 17px;
   margin-bottom: 67px;
