@@ -18,7 +18,7 @@ const renderedElements = {
   title: "Аргент Д'Нур",
   link: './images/argent.webp'
 };
-const photoPopup = document.querySelector('.overlay_photo__popup');
+const photoPopup = document.querySelector('.overlay_type__image');
 const photoPopupImg = photoPopup.querySelector('.photo__img');
 const photoPopupText = photoPopup.querySelector('.photo__text');
 const photoPopupClose = photoPopup.querySelector('.overlay_photo__close');
@@ -59,15 +59,16 @@ function createElement (link, title) {
   const element = template.querySelector('.element').cloneNode(true);
   element.querySelector('.element__title').textContent = title;
   element.querySelector('.element__image').src = link;
+  element.querySelector('.element__image').alt = 'image';
     const trash = element.querySelector('.element__trash');
   const heart = element.querySelector('.element__heart');
   heart.addEventListener('click', function(e) {
     heart.classList.toggle('element__heart_liked');
   });
   element.querySelector('.element__image').addEventListener('click', function(e) {
-    photoPopup.classList.toggle('overlay_opened');
     photoPopupImg.src = link;
     photoPopupText.textContent = title;
+    photoPopup.classList.toggle('overlay_opened');
   });
   trash.addEventListener('click', function(e) {
     element.remove();
