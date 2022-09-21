@@ -6,7 +6,7 @@ const profilettl = document.querySelector('.profile__title');
 const profdesc = document.querySelector('.profile__subtitle');
 const modalname = document.getElementById('#modalname');
 const modaldesc = document.getElementById('#modaldesc');
-const popup = document.querySelector('.overlay_type__popup');
+const popup = document.querySelector('.overlay_type_popup');
 const addButton = document.querySelector('.profile__add-button');
 const addClose = document.querySelector('.overlay_popup__close');
 const popupSubmit = document.querySelector('.popup-form');
@@ -40,7 +40,7 @@ const renderedElements = [
   link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
 }
 ]
-const photoPopup = document.querySelector('.overlay_type__image');
+const photoPopup = document.querySelector('.overlay_type_image');
 const photoPopupImg = photoPopup.querySelector('.photo__img');
 const photoPopupText = photoPopup.querySelector('.photo__text');
 const photoPopupClose = photoPopup.querySelector('.overlay_photo__close');
