@@ -14,17 +14,39 @@ const template = document.querySelector('.element-template').content;
 const elementLink = document.getElementById('#popuplink');
 const elementTitle = document.getElementById('#popuptitle');
 const elements = document.querySelector('.elements');
-const renderedElements = {
-  title: "Аргент Д'Нур",
-  link: './images/argent.webp'
-};
+const renderedElements = [
+  {
+  name: 'Архыз',
+  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+},
+{
+  name: 'Челябинская область',
+  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+},
+{
+  name: 'Иваново',
+  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+},
+{
+  name: 'Камчатка',
+  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+},
+{
+  name: 'Холмогорский район',
+  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+},
+{
+  name: 'Байкал',
+  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+}
+]
 const photoPopup = document.querySelector('.overlay_type__image');
 const photoPopupImg = photoPopup.querySelector('.photo__img');
 const photoPopupText = photoPopup.querySelector('.photo__text');
 const photoPopupClose = photoPopup.querySelector('.overlay_photo__close');
 
 for (var i = 0; i < 6; i++) {
-  createElement(renderedElements.link, renderedElements.title);
+  createElement(renderedElements[i].link, renderedElements[i].name);
 }
 
 makeItPopup(photoPopupClose, photoPopup);
