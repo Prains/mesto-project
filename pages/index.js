@@ -58,30 +58,48 @@ const maker = {
     });
     return element;
   },
-  makeItPopup: function(btn, popup, fun) {
-    btn.addEventListener('click', function(e) {
-      popup.classList.toggle('overlay_opened');
-      fun();
-    });
+  openPopup: function (popup) {
+    popup.classList.add('overlay_opened');
   },
-  makeItSubmit: function(btn, popup, fun) {
-    btn.addEventListener('submit', function(e) {
-      fun(e);
-      popup.classList.toggle('overlay_opened');
-    });
+  closePopup: function (popup) {
+    popup.classList.remove('overlay_opened');
   }
 }
 const photoPopup = document.querySelector('.overlay_type_image');
 const photoPopupImg = photoPopup.querySelector('.photo__img');
 const photoPopupText = photoPopup.querySelector('.photo__text');
 const photoPopupClose = photoPopup.querySelector('.overlay_photo__close');
-maker.makeItPopup(profilebtn, modal);
-maker.makeItPopup(addButton, popup);
-maker.makeItPopup(photoPopupClose, photoPopup);
-maker.makeItPopup(addClose, popup);
-maker.makeItSubmit(modalsubmit, modal, updateData);
-maker.makeItPopup(modalclose, modal, resetData);
-maker.makeItSubmit(popupSubmit, popup, updateAndAdd);
+
+profilebtn.addEventListener('click', function(e) {
+  maker.openPopup(modal);
+});
+
+addButton.addEventListener('click', function(e) {
+  maker.openPopup(popup);
+});
+
+photoPopupClose.addEventListener('click', function(e) {
+  maker.closePopup(photoPopup);
+});
+
+addClose.addEventListener('click', function(e) {
+  maker.closePopup(popup);
+});
+
+modalsubmit.addEventListener('submit', function(e) {
+  maker.closePopup(modal);
+  updateData(e);
+});
+
+modalclose.addEventListener('click', function(e) {
+  maker.closePopup(modal);
+  resetData(e);
+});
+
+popupSubmit.addEventListener('submit', function(e) {
+  maker.closePopup(popup);
+  updateAndAdd(e);
+});
 
 function updateData(e) {
   e.preventDefault();
