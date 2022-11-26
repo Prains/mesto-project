@@ -1,76 +1,184 @@
 <!DOCTYPE html>
 <html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Проект Место</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Проект Место</title>
-  <link rel="stylesheet" href='./pages/index.css'>
-</head>
-
-<body class="body">
-  <header class="header">
-    <img src="./images/header__logo.svg" alt='логотип место' class="header__logo">
-  </header>
-  <main class="page">
-    <section class="profile">
-      <div class="profile__picture-wrapper">
-        <img src="./images/profile__picture.jpg" alt="фотография профиля" class="profile__picture">
-        <div class="profile__grid">
-          <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <p class="profile__subtitle">Исследователь океана</p>
-          <button type="button" name="profile__button" class="profile__button"></button>
+  <body class="body">
+    <header class="header">
+      <img
+        src="./images/header__logo.svg"
+        alt="логотип место"
+        class="header__logo"
+      />
+    </header>
+    <main class="page">
+      <section class="profile">
+        <div class="profile__picture-wrapper">
+          <div class="profile__edit">
+            <img src="./images/edit.svg" alt="" class="profile__editbutton"/>
+          </div>
+          <img src="" alt="фотография профиля" class="profile__picture" />
+          <div class="profile__grid">
+            <h1 class="profile__title"></h1>
+            <p class="profile__subtitle"></p>
+            <button
+              type="button"
+              name="profile__button"
+              class="profile__button"
+            ></button>
+          </div>
+        </div>
+        <button
+          type="button"
+          name="profile__add-button"
+          class="profile__add-button"
+        ></button>
+      </section>
+      <section class="elements"></section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">© 2020 Mesto Russia</p>
+    </footer>
+    <div class="overlay" id="#modalfirst">
+      <div class="overlay__modal">
+        <button
+          type="button"
+          name="overlay__close"
+          class="overlay__close"
+          id="#modal__form"
+        ></button>
+        <h3 class="overlay__title">Редактировать профиль</h3>
+        <form
+          class="overlay__form"
+          action="index.html"
+          method="post"
+          name="overlay__form"
+          novalidate
+        >
+          <input
+            type="text"
+            class="overlay__text"
+            id="#modalname"
+            name="profilename"
+            minlength="2"
+            maxlength="40"
+            required
+          />
+          <p class="overlay__error" id="profnameerr"></p>
+          <input
+            type="text"
+            class="overlay__text"
+            id="#modaldesc"
+            name="profiledescription"
+            minlength="2"
+            maxlength="200"
+            required
+          />
+          <p class="overlay__error" id="profdescerr"></p>
+          <button
+            type="submit"
+            name="overlay__button"
+            class="disabled"
+            id="modalbutton"
+            disabled
+          >
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="overlay overlay_type_popup">
+      <div class="overlay__modal">
+        <button
+          type="button"
+          name="overlay__close"
+          class="overlay__close overlay_popup__close"
+        ></button>
+        <h3 class="overlay__title overlay_popup__title">Новое место</h3>
+        <form
+          class="overlay__form popup-form"
+          action="index.html"
+          method="post"
+          name="overlay__form"
+          novalidate
+        >
+          <input
+            type="text"
+            class="overlay__text"
+            id="#popuptitle"
+            name="addname"
+            placeholder="Название"
+            minlength="2"
+            maxlength="30"
+            required
+          />
+          <p class="overlay__error" id="addnameerr"></p>
+          <input
+            type="url"
+            class="overlay__text"
+            id="#popuplink"
+            name="adddescription"
+            placeholder="Ссылка на картинку"
+            required
+          />
+          <p class="overlay__error" id="adddescerr"></p>
+          <button
+            type="submit"
+            name="overlay__button"
+            class="disabled"
+            id="elementbutton"
+            disabled
+          >
+            Создать
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="overlay overlay_type_image">
+      <div class="overlay_photo__modal">
+        <button
+          type="button"
+          name="overlay__close"
+          class="overlay_photo__close"
+        ></button>
+        <img src="" class="photo__img" alt="img" />
+        <p class="photo__text"></p>
+      </div>
+    </div>
+    <div class="avatar">
+      <div class="avatar__modal">
+        <img src="./images/modal__close.svg" alt="" class="avatar__close">
+        <form action="post" class="avatar__form">
+          <h2 class="avatar__title">Обновить аватар</h2>
+          <input type="url" required class="avatar__input" id="avatarinput" placeholder="Ссылка на новую аватарку">
+          <p class="overlay__error" id="avatarerror"></p>
+          <button type="submit" class="avatar__submit disabled" disabled>Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <template class="element-template">
+      <div class="element">
+        <img src="./images/trash.svg" alt="img" class="element__trash" />
+        <img src="" alt="img" class="element__image" />
+        <div class="element__text">
+          <h2 class="element__title"></h2>
+          <div class="element__wrapper">
+            <button
+              type="button"
+              name="element__heart"
+              class="element__heart"
+            ></button>
+            <p class="element__counter"></p>
+          </div>
         </div>
       </div>
-      <button type="button" name="profile__add-button" class="profile__add-button"></button>
-    </section>
-    <section class="elements">
-    </section>
-  </main>
-  <footer class="footer">
-    <p class="footer__text">© 2020 Mesto Russia</p>
-  </footer>
-  <div class="overlay" id="#modalfirst">
-    <div class="overlay__modal">
-      <button type="button" name="overlay__close" class="overlay__close" id="#modal__form"></button>
-      <h3 class="overlay__title">Редактировать профиль</h3>
-      <form class="overlay__form" action="index.html" method="post" name="overlay__form">
-        <input type="text" class="overlay__text" id="#modalname" name="name" value="Жак-Ив Кусто">
-        <input type="text" class="overlay__text" id="#modaldesc" name="description" value="Исследователь океана">
-        <button type='submit' name="overlay__button" class="overlay__button">Сохранить</button>
-      </form>
-    </div>
-  </div>
-  <div class="overlay overlay_type_popup">
-    <div class="overlay__modal">
-      <button type="button" name="overlay__close" class="overlay__close overlay_popup__close"></button>
-      <h3 class="overlay__title overlay_popup__title">Новое место</h3>
-      <form class="overlay__form popup-form" action="index.html" method="post" name="overlay__form">
-        <input type="text" class="overlay__text" id="#popuptitle" name="name" placeholder="Название">
-        <input type="text" class="overlay__text" id="#popuplink" name="description" placeholder="Ссылка на картинку">
-        <button type='submit' name="overlay__button" class="overlay__button overlay_popup__submit">Создать</button>
-      </form>
-    </div>
-  </div>
-  <div class="overlay overlay_type_image">
-    <div class="overlay_photo__modal">
-      <button type="button" name="overlay__close" class="overlay_photo__close"></button>
-      <img src="" class="photo__img" alt="img">
-      <p class = 'photo__text'></p>
-    </div>
-  </div>
-  <template class="element-template">
-    <div class="element">
-      <img src="./images/trash.svg" alt="img" class="element__trash">
-      <img src="" alt="img" class="element__image">
-      <div class="element__text">
-        <h2 class="element__title"></h2>
-        <button type="button" name="element__heart" class="element__heart"></button>
-      </div>
-    </div>
-  </template>
-  <template class = 'photo-template'>
-  </template>
-  <script src="./pages/index.js" charset="utf-8"></script>
-</body>
+    </template>
+    <template class="photo-template"> </template>
+    <script type="module" src="./pages/index.js" charset="utf-8"></script>
+  </body>
 </html>

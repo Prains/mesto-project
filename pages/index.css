@@ -17,6 +17,7 @@
 @import "../blocks/profile/__picture/profile__picture.css";
 @import "../blocks/profile/__title/profile__title.css";
 @import "../blocks/profile/__subtitle/profile__subtitle.css";
+@import "../blocks/profile/__edit/profile__edit.css";
 /*elements*/
 @import "../blocks/elements/elements.css";
 @import "../blocks/element/element.css";
@@ -26,6 +27,8 @@
 @import "../blocks/element/__title/element__title.css";
 @import "../blocks/element/__heart/_liked/element__heart_liked.css";
 @import "../blocks/element/__trash/element__trash.css";
+@import "../blocks/element/__counter/element__counter.css";
+@import "../blocks/element/__wrapper/element__wrapper.css";
 /*footer*/
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__text/footer__text.css";
@@ -33,6 +36,7 @@
 @import "../blocks/overlay/__modal/overlay__modal.css";
 @import "../blocks/overlay/__title/overlay__title.css";
 @import "../blocks/overlay/__text/overlay__text.css";
+@import "../blocks/overlay/__error/overlay__error.css";
 @import "../blocks/overlay/overlay.css";
 @import "../blocks/overlay/_opened/overlay_opened.css";
 @import "../blocks/overlay/__form/overlay__form.css";
@@ -47,3 +51,109 @@
 @import "../blocks/overlay/_photo/__modal/overlay_photo__modal.css";
 @import "../blocks/overlay/_photo/__img/photo__img.css";
 @import "../blocks/overlay/_photo/__text/photo__text.css";
+
+.disabled {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  color: #000000;
+  opacity: 0.2;
+  background: transparent;
+  min-width: 358px;
+  min-height: 50px;
+  margin-bottom: 37px;
+}
+
+.avatar {
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 20000000000000;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+.avatar__modal {
+  margin: 0 auto;
+  max-width: 430px;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.avatar__close {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  right: -32px;
+  top: -32px;
+  cursor: pointer;
+}
+.avatar__title {
+  margin: 34px auto 54px auto;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+}
+.avatar__form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  max-width: 358px;
+  width: 100%;
+  margin: 0 auto;
+}
+.avatar__input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 27px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  cursor: pointer;
+}
+
+.avatar__input:invalid {
+  border-bottom: 1px solid red;
+}
+
+@media screen and (max-width: 767px) {
+  .avatar__modal {
+    width: 88.13%;
+    align-items: center;
+  }
+  .avatar__close {
+    right: 0;
+    top: -48px;
+  }
+  .avatar__title{
+    margin-top: 25px;
+    margin-bottom: 75px;
+  }
+  .avatar__form{
+    max-width: 238px;
+    align-items: center;
+  }
+  .disabled {
+    min-width: 238px;
+    margin-bottom: 25px;
+  }
+}

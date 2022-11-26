@@ -1,0 +1,26 @@
+.profile__edit {
+    background: rgba(0, 0, 0, 0.8);
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 20;
+    visibility: hidden;
+    cursor: pointer;
+  }
+
+@media screen and (max-width: 767px) {
+    .profile__edit{
+        top: 0;
+    }
+}
+
+
+.profile__editbutton {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    z-index: 18;
+}
