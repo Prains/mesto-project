@@ -27,3 +27,10 @@ export function hasInvalid(inputList) {
       $(button).removeClass("overlay__button");
     }
   }
+
+  export function validateIt(listOfInput, button, input, text) {
+    input.addEventListener('change', ()=>{
+        buttonValidation(listOfInput, button);
+        validation(input, text)
+    })
+  }
