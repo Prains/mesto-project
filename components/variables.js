@@ -1,3 +1,5 @@
+import { getInitialData } from "./net.js";
+
 export const modal = document.querySelector(".overlay");
 export const profilebtn = document.querySelector(".profile__button");
 export const modalclose = document.querySelector(".overlay__close");

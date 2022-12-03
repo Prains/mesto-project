@@ -1,15 +1,19 @@
 import { template, photoPopupImg, photoPopupText, photoPopup } from '../components/variables.js'
-export function createElement(data) {
+import { getInitialData } from './net.js';
+export  function createElement(data) {
+    getInitialData()
+    .then(res => res.json())
+    .then((res) => {
+        if (res._id !== data.owner._id) {
+            element.querySelector('.element__trash').style.visibility = 'hidden';
+        }
+    })
     const element = template.querySelector(".element").cloneNode(true);
     element.querySelector(".element__title").textContent = data.name;
     element.querySelector(".element__image").src = data.link;
     element.querySelector(".element__image").alt = "image";
     element.querySelector(".element__counter").textContent = data.likes.length;
-    fetch('https://nomoreparties.co/v1/plus-cohort-17/users/me', {
-        headers: {
-            authorization: "c8f1a46c-65ef-455d-a389-1ba7850544c9",
-        },
-    })
+     getInitialData()
         .then(res => res.json())
         .then((res) => {
             for (let i = 0; i < data.likes.length; i++) {
@@ -70,6 +74,7 @@ export function createElement(data) {
             photoPopupText.textContent = data.title;
             photoPopup.classList.toggle("overlay_opened");
         });
+
     element
         .querySelector(".element__trash")
         .addEventListener("click", function (e) {

@@ -2,21 +2,34 @@ import * as v from '../components/variables.js'
 import { hasInvalid, validation, buttonValidation, validateIt } from '../components/validation.js'
 import { openPopup, closePopup } from '../components/popup.js'
 import { createElement } from '../components/element.js'
-import { getInitialCards, getInitialData, makeNewCard, sendProfileData } from '../components/net.js'
+import { getInitialCards, getInitialData, makeNewCard, sendProfileData, sendProfileAvatar } from '../components/net.js'
 
+await getInitialCards()
+.then((res) => res.json())
+.then((data) => {
+  for (var i = 0; i < data.length; i++) {
+    v.elements.append(createElement(data[i]));
+  }
+});
+getInitialData()
+.then((res) => res.json())
+  .then((data) => {
+    v.profilettl.textContent = data.name
+    v.profdesc.textContent = data.about
+    v.profilePicture.src = data.avatar
+    v.modalname.value = data.name
+    v.modaldesc.value = data.about
+  });
 
-getInitialCards();
-getInitialData();
-
-$(v.profilePicture).mouseover(() => {
+v.profilePicture.addEventListener('mouseover', () => {
   v.profileEditOverlay.style.visibility = 'visible';
 })
 
-$(v.profileEditOverlay).mouseout(() => {
+v.profileEditOverlay.addEventListener('mouseout', () => {
   v.profileEditOverlay.style.visibility = 'hidden';
 })
 
-$(v.profileEditOverlay).mouseover(() => {
+v.profileEditOverlay.addEventListener('mouseover', () => {
   v.profileEditOverlay.style.visibility = 'visible';
 })
 
@@ -70,7 +83,7 @@ v.popupSubmit.addEventListener("submit", function (e) {
   updateAndAdd(e);
 });
 
-$(document).click((evt) => {
+document.addEventListener('click', (evt) => {
   if (evt.target.classList.contains("overlay") || evt.target.classList.contains("avatar") || evt.target.classList.contains("overlay_type_image") || evt.target.classList.contains("overlay_type_popup")) {
     closePopup(v.modal);
     closePopup(v.profileEditModal);
@@ -79,7 +92,7 @@ $(document).click((evt) => {
   }
 });
 
-$(document).keyup((evt) => {
+document.addEventListener('click', (evt) => {
   if (evt.key === "Escape") {
     closePopup(v.modal);
     closePopup(v.photoPopup);
@@ -132,16 +145,12 @@ function resetData(e) {
 }
 
 
-$(v.profileEditForm).submit((e) => {
+v.profileEditForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  let temp = {
-    name: v.modalname.value,
-    about: v.modaldesc.value,
-    avatar: v.profileEditInput.value
-  }
- sendProfileData(temp)
-    .then(() => {
-      v.profilePicture.src = $(v.profileEditInput).val();
+  sendProfileAvatar(v.profileEditInput.value)
+    .then(res => res.json())
+    .then((res) => {
+      v.profilePicture.src = res.avatar;
       closePopup(v.profileEditModal);
     });
 })
