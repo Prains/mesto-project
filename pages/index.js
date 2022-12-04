@@ -2,24 +2,42 @@ import * as v from '../components/variables.js'
 import { hasInvalid, validation, buttonValidation, validateIt } from '../components/validation.js'
 import { openPopup, closePopup } from '../components/popup.js'
 import { createElement } from '../components/element.js'
-import { getInitialCards, getInitialData, makeNewCard, sendProfileData, sendProfileAvatar } from '../components/net.js'
 
-await getInitialCards()
-.then((res) => res.json())
-.then((data) => {
-  for (var i = 0; i < data.length; i++) {
-    v.elements.append(createElement(data[i]));
+const renderedElements = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
-});
-getInitialData()
-.then((res) => res.json())
-  .then((data) => {
-    v.profilettl.textContent = data.name
-    v.profdesc.textContent = data.about
-    v.profilePicture.src = data.avatar
-    v.modalname.value = data.name
-    v.modaldesc.value = data.about
-  });
+];
+
+for (var i = 0; i < renderedElements.length; i++) {
+  v.elements.append(createElement(renderedElements[i]));
+}
+
+v.profilettl.textContent = 'Жак-Ив Кусто';
+v.profdesc.textContent = 'Исследователь океана';
+v.modalname.value = v.profilettl.textContent;
+v.modaldesc.value = v.profdesc.textContent;
 
 v.profilePicture.addEventListener('mouseover', () => {
   v.profileEditOverlay.style.visibility = 'visible';
@@ -40,7 +58,7 @@ validateIt(v.elementInputList, v.elementButton, v.elementTitle, v.addNameErr);
 validateIt(v.elementInputList, v.elementButton, v.elementLink, v.addDescErr);
 
 
-$(v.profileEditInput).change(() => {
+v.profileEditInput.addEventListener('change', () => {
   validation(v.profileEditInput, v.profileEditError);
   if (v.profileEditInput.validity.valid) {
     v.profileEditButton.disabled = false;
@@ -104,18 +122,9 @@ document.addEventListener('click', (evt) => {
 
 function updateData(e) {
   e.preventDefault();
-  let temp = {
-    name: v.modalname.value,
-    about: v.modaldesc.value,
-    avatar: v.profileEditInput.value
-  }
-  sendProfileData(temp)
-    .then((res) => res.json())
-    .then((res) => {
-      v.profilettl.textContent = res.name;
-      v.profdesc.textContent = res.about;
-      closePopup(v.modal);
-    })
+  v.profilettl.textContent = v.modalname.value;
+  v.profdesc.textContent = v.modaldesc.value;
+  closePopup(v.modal);
 }
 
 function updateAndAdd(e) {
@@ -123,20 +132,10 @@ function updateAndAdd(e) {
   let temp = {
     name: v.elementTitle.value,
     link: v.elementLink.value,
-    owner: {
-      name: v.profilettl.textContent,
-      about: v.profdesc.textContent
-    },
-    likes: [
-    ]
   }
-  makeNewCard(temp)
-    .then(res => res.json())
-    .then((res) => {
-      v.elements.prepend(createElement(res));
-      v.popupSubmit.reset();
-      closePopup(v.popup);
-    })
+  v.elements.prepend(createElement(temp));
+  v.popupSubmit.reset();
+  closePopup(v.popup);
 }
 
 function resetData(e) {
@@ -147,22 +146,18 @@ function resetData(e) {
 
 v.profileEditForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  sendProfileAvatar(v.profileEditInput.value)
-    .then(res => res.json())
-    .then((res) => {
-      v.profilePicture.src = res.avatar;
-      closePopup(v.profileEditModal);
-    });
+  v.profilePicture.src = v.profileEditInput.value;
+  closePopup(v.profileEditModal);
 })
 
 v.profileEditOverlay.addEventListener('click', () => {
-  $(v.profileEditInput).val(v.profilePicture.src);
+  v.profileEditInput.value = v.profilePicture.src;
   openPopup(v.profileEditModal);
 });
 
 v.profileEditCloseButton.addEventListener('click', () => {
   closePopup(v.profileEditModal);
-  $(v.profileEditInput).val(v.profilePicture.src);
+  v.profileEditInput.value = v.profilePicture.src;
 })
 /* token c8f1a46c-65ef-455d-a389-1ba7850544c9 */
 
