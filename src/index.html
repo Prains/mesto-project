@@ -173,7 +173,11 @@
             placeholder="Ссылка на новую аватарку"
           />
           <p class="overlay__error" id="avatarerror"></p>
-          <button type="submit" class="avatar__submit disabled" disabled>
+          <button
+            type="submit"
+            class="avatar__submit disabled profile__button"
+            disabled
+          >
             Сохранить
           </button>
         </form>
@@ -181,7 +185,11 @@
     </div>
     <template class="element-template">
       <div class="element">
-        <img src="<%=require('./images/trash.svg')%>" alt="img" class="element__trash" />
+        <img
+          src="<%=require('./images/trash.svg')%>"
+          alt="img"
+          class="element__trash"
+        />
         <img src="" alt="img" class="element__image" />
         <div class="element__text">
           <h2 class="element__title"></h2>

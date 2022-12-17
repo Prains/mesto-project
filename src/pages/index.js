@@ -4,7 +4,7 @@ import { hasInvalid, validation, buttonValidation, validateIt } from '../compone
 import { openPopup, closePopup } from '../components/popup.js'
 import { createElement } from '../components/element.js'
 
-const renderedElements = [
+const initialElements = [
   {
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -31,8 +31,8 @@ const renderedElements = [
   }
 ];
 
-for (var i = 0; i < renderedElements.length; i++) {
-  v.elements.append(createElement(renderedElements[i]));
+for (var i = 0; i < initialElements.length; i++) {
+  v.elements.append(createElement(initialElements[i]));
 }
 
 v.profilettl.textContent = 'Жак-Ив Кусто';
@@ -63,12 +63,12 @@ v.profileEditInput.addEventListener('change', () => {
   validation(v.profileEditInput, v.profileEditError);
   if (v.profileEditInput.validity.valid) {
     v.profileEditButton.disabled = false;
-    $(v.profileEditButton).removeClass("disabled");
-    $(v.profileEditButton).addClass("overlay__button");
+    v.profileEditButton.classList.remove("disabled");
+    v.profileEditButton.classList.remove("overlay__button");
   } else {
     v.profileEditButton.disabled = true;
-    $(v.profileEditButton).addClass("disabled");
-    $(v.profileEditButton).removeClass("overlay__button");
+    v.profileEditButton.classList.remove("disabled");
+    v.profileEditButton.classListremove("overlay__button");
   }
 })
 
@@ -78,7 +78,7 @@ v.profilebtn.addEventListener("click", function (e) {
 
 v.addButton.addEventListener("click", function (e) {
   buttonValidation(v.elementInputList, v.elementButton);
-  openPopup(v.popup);
+  openPopup(v.popupEditProfile);
 });
 
 v.photoPopupClose.addEventListener("click", function (e) {
@@ -86,7 +86,7 @@ v.photoPopupClose.addEventListener("click", function (e) {
 });
 
 v.addClose.addEventListener("click", function (e) {
-  closePopup(v.popup);
+  closePopup(v.popupEditProfile);
 });
 
 v.modalsubmit.addEventListener("submit", function (e) {
@@ -107,15 +107,15 @@ document.addEventListener('click', (evt) => {
     closePopup(v.modal);
     closePopup(v.profileEditModal);
     closePopup(v.photoPopup);
-    closePopup(v.popup);
+    closePopup(v.popupEditProfile);
   }
 });
 
-document.addEventListener('click', (evt) => {
+document.addEventListener('keyup', (evt) => {
   if (evt.key === "Escape") {
     closePopup(v.modal);
     closePopup(v.photoPopup);
-    closePopup(v.popup);
+    closePopup(v.popupEditProfile);
     closePopup(v.profileEditModal);
   }
 });
@@ -136,7 +136,7 @@ function updateAndAdd(e) {
   }
   v.elements.prepend(createElement(temp));
   v.popupSubmit.reset();
-  closePopup(v.popup);
+  closePopup(v.popupEditProfile);
 }
 
 function resetData(e) {
@@ -160,6 +160,7 @@ v.profileEditCloseButton.addEventListener('click', () => {
   closePopup(v.profileEditModal);
   v.profileEditInput.value = v.profilePicture.src;
 })
+
 /* token c8f1a46c-65ef-455d-a389-1ba7850544c9 */
 
 // ovno kod

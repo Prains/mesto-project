@@ -50,89 +50,17 @@
 @import "../blocks/overlay/_photo/__modal/overlay_photo__modal.css";
 @import "../blocks/overlay/_photo/__img/photo__img.css";
 @import "../blocks/overlay/_photo/__text/photo__text.css";
+/* disabled */
+@import '../blocks/disabled/disabled.css';
+/* avatar */
+@import '../blocks/avatar/avatar.css';
+@import '../blocks/avatar/__close/avatar__close.css';
+@import '../blocks/avatar/__form/avatar__form.css';
+@import '../blocks/avatar/__input/avatar__input.css';
+@import '../blocks/avatar/__title/avatar__title.css';
+@import '../blocks/avatar/__modal/avatar__modal.css';
 
-.disabled {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-  border: 1px solid #000000;
-  border-radius: 2px;
-  color: #000000;
-  opacity: 0.2;
-  background: transparent;
-  min-width: 358px;
-  min-height: 50px;
-  margin-bottom: 37px;
-}
 
-.avatar {
-  visibility: hidden;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  z-index: 20000000000000;
-  transition: all 0.3s ease;
-  opacity: 0;
-}
-.avatar__modal {
-  margin: 0 auto;
-  max-width: 430px;
-  width: 100%;
-  background: #ffffff;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-}
-.avatar__close {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  right: -32px;
-  top: -32px;
-  cursor: pointer;
-}
-.avatar__title {
-  margin: 34px auto 54px auto;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 29px;
-}
-.avatar__form {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  max-width: 358px;
-  width: 100%;
-  margin: 0 auto;
-}
-.avatar__input {
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  width: 100%;
-  height: 27px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  cursor: pointer;
-}
-
-.avatar__input:invalid {
-  border-bottom: 1px solid red;
-}
 
 @media screen and (max-width: 767px) {
   .avatar__modal {
@@ -143,11 +71,11 @@
     right: 0;
     top: -48px;
   }
-  .avatar__title{
+  .avatar__title {
     margin-top: 25px;
     margin-bottom: 75px;
   }
-  .avatar__form{
+  .avatar__form {
     max-width: 238px;
     align-items: center;
   }

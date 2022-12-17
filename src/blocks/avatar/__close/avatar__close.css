@@ -1,0 +1,15 @@
+.avatar__close {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  right: -32px;
+  top: -32px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .avatar__close {
+    right: 0;
+    top: -48px;
+  }
+}
