@@ -4,13 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Проект Место</title>
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
 
   <body class="body">
     <header class="header">
       <img
-        src="./images/header__logo.svg"
+        src="<%=require('./images/header__logo.svg')%>"
         alt="логотип место"
         class="header__logo"
       />
@@ -19,9 +18,17 @@
       <section class="profile">
         <div class="profile__picture-wrapper">
           <div class="profile__edit">
-            <img src="./images/edit.svg" alt="" class="profile__editbutton"/>
+            <img
+              src="<%=require('./images/edit.svg')%>"
+              alt=""
+              class="profile__editbutton"
+            />
           </div>
-          <img src="./images/profile__picture.jpg" alt="фотография профиля" class="profile__picture" />
+          <img
+            src="<%=require('./images/profile__picture.jpg')%>"
+            alt="фотография профиля"
+            class="profile__picture"
+          />
           <div class="profile__grid">
             <h1 class="profile__title"></h1>
             <p class="profile__subtitle"></p>
@@ -151,18 +158,30 @@
     </div>
     <div class="avatar">
       <div class="avatar__modal">
-        <img src="./images/modal__close.svg" alt="" class="avatar__close">
+        <img
+          src="<%=require('./images/modal__close.svg')%>"
+          alt=""
+          class="avatar__close"
+        />
         <form action="post" class="avatar__form">
           <h2 class="avatar__title">Обновить аватар</h2>
-          <input type="url" required class="avatar__input" id="avatarinput" placeholder="Ссылка на новую аватарку">
+          <input
+            type="url"
+            required
+            class="avatar__input"
+            id="avatarinput"
+            placeholder="Ссылка на новую аватарку"
+          />
           <p class="overlay__error" id="avatarerror"></p>
-          <button type="submit" class="avatar__submit disabled" disabled>Сохранить</button>
+          <button type="submit" class="avatar__submit disabled" disabled>
+            Сохранить
+          </button>
         </form>
       </div>
     </div>
     <template class="element-template">
       <div class="element">
-        <img src="./images/trash.svg" alt="img" class="element__trash" />
+        <img src="<%=require('./images/trash.svg')%>" alt="img" class="element__trash" />
         <img src="" alt="img" class="element__image" />
         <div class="element__text">
           <h2 class="element__title"></h2>

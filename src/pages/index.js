@@ -1,3 +1,4 @@
+import './index.css';
 import * as v from '../components/variables.js'
 import { hasInvalid, validation, buttonValidation, validateIt } from '../components/validation.js'
 import { openPopup, closePopup } from '../components/popup.js'
