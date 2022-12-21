@@ -17,7 +17,7 @@ export function validation(validate, text) {
 }
 
 export function buttonValidation(inputList, button) {
-  if (hasInvalid(inputList) == undefined) {
+  if (hasInvalid(inputList) === undefined) {
     button.disabled = false;
     button.classList.remove("disabled");
     button.classList.add("overlay__button");

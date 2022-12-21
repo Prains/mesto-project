@@ -37,9 +37,6 @@ for (var i = 0; i < initialElements.length; i++) {
 
 v.profilettl.textContent = 'Жак-Ив Кусто';
 v.profdesc.textContent = 'Исследователь океана';
-v.modalname.value = v.profilettl.textContent;
-v.modaldesc.value = v.profdesc.textContent;
-
 v.profilePicture.addEventListener('mouseover', () => {
   v.profileEditOverlay.style.visibility = 'visible';
 })
@@ -68,7 +65,7 @@ v.profileEditInput.addEventListener('change', () => {
   } else {
     v.profileEditButton.disabled = true;
     v.profileEditButton.classList.remove("disabled");
-    v.profileEditButton.classListremove("overlay__button");
+    v.profileEditButton.classList.remove("overlay__button");
   }
 })
 
@@ -100,24 +97,6 @@ v.modalclose.addEventListener("click", function (e) {
 
 v.popupSubmit.addEventListener("submit", function (e) {
   updateAndAdd(e);
-});
-
-document.addEventListener('click', (evt) => {
-  if (evt.target.classList.contains("overlay") || evt.target.classList.contains("avatar") || evt.target.classList.contains("overlay_type_image") || evt.target.classList.contains("overlay_type_popup")) {
-    closePopup(v.modal);
-    closePopup(v.profileEditModal);
-    closePopup(v.photoPopup);
-    closePopup(v.popupEditProfile);
-  }
-});
-
-document.addEventListener('keyup', (evt) => {
-  if (evt.key === "Escape") {
-    closePopup(v.modal);
-    closePopup(v.photoPopup);
-    closePopup(v.popupEditProfile);
-    closePopup(v.profileEditModal);
-  }
 });
 
 
