@@ -1,11 +1,12 @@
 .overlay__error {
-  visibility: "hidden";
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
   font-family: "Inter", "Arial", sans-serif;
   font-size: 12px;
   line-height: 15px;
   color: #ff0000;
   margin: 0 0 30px 0;
   max-width: 358px;
+  padding-top: 5px;
 }
 .overlay__error:last-of-type {
   margin-bottom: 48px;

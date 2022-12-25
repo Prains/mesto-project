@@ -1,22 +1,13 @@
 
 export function openPopup(popup) {
+  const tempPopup = popup;
   popup.classList.add("overlay_opened");
-  document.addEventListener('keyup', (popup) => {
-    checkEsc(popup)
-  });
-  document.addEventListener('click', (popup) => {
-    checkIsOverlay(popup)
-  })
+  closeIfClickOverlay(tempPopup);
+  closeIfEsc(tempPopup);
 }
 
 export function closePopup(popup) {
   popup.classList.remove("overlay_opened");
-  document.removeEventListener('keyup', (popup) => {
-    checkEsc(popup)
-  })
-  document.removeEventListener('click', (popup) => {
-    checkIsOverlay(popup)
-  })
 }
 
 export function openCard(data, popup) {
@@ -26,9 +17,18 @@ export function openCard(data, popup) {
   openPopup(popup.overlay)
 }
 
-function checkEsc(evt, popup) {
-  if (evt.key === "Escape") closePopup(popup);
+function closeIfClickOverlay(tempPopup) {
+  tempPopup.addEventListener('click', (e) => {
+    if (~e.target.classList.toString().indexOf('overlay_type')) {
+      closePopup(tempPopup)
+    };
+  });
 }
-function checkIsOverlay(evt, popup) {
-  if (evt.target === popup) closePopup(popup);
+
+function closeIfEsc(tempPopup) {
+  document.addEventListener('keyup', (e) => {
+    if (e.key === 'Escape') {
+      closePopup(tempPopup);
+    }
+  })
 }

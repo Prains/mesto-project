@@ -13,16 +13,14 @@ export function createElement(data) {
                 .querySelector(".element__heart")
                 .classList.toggle("element__heart_liked");
         });
-    element
-        .querySelector(".element__image")
-        .addEventListener("click", function (e) {
-            let popup = {
-                overlay: photoPopup,
-                img: photoPopupImg,
-                text: photoPopupText
-            }
-            openCard(data, popup)
-        });
+    image.addEventListener("click", function (e) {
+        let popup = {
+            overlay: photoPopup,
+            img: photoPopupImg,
+            text: photoPopupText
+        }
+        openCard(data, popup)
+    });
 
     element
         .querySelector(".element__trash")

@@ -1,23 +1,25 @@
 export function hasInvalid(inputList) {
   for (let i = 0; i < inputList.length; i++) {
     if (!inputList[i].validity.valid) {
-      return inputList[i].validity.valid;
+      return false;
+    } else {
+      return true;
     }
   }
 }
 
 export function validation(validate, text) {
   if (!validate.validity.valid) {
-    text.style.visibility = "visible";
     text.textContent = validate.validationMessage;
+    text.style.borderTop = '1px solid red';
   } else {
-    text.style.visibility = "hidden";
     text.textContent = "";
   }
 }
 
 export function buttonValidation(inputList, button) {
-  if (hasInvalid(inputList) === undefined) {
+  console.log(hasInvalid(inputList));
+  if (hasInvalid(inputList) === true) {
     button.disabled = false;
     button.classList.remove("disabled");
     button.classList.add("overlay__button");

@@ -30,8 +30,8 @@
             class="profile__picture"
           />
           <div class="profile__grid">
-            <h1 class="profile__title"></h1>
-            <p class="profile__subtitle"></p>
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <p class="profile__subtitle">Исследователь океана</p>
             <button
               type="button"
               name="profile__button"
@@ -50,7 +50,7 @@
     <footer class="footer">
       <p class="footer__text">© 2020 Mesto Russia</p>
     </footer>
-    <div class="overlay" id="#modalfirst">
+    <div class="overlay overlay_type" id="#modalfirst">
       <div class="overlay__modal">
         <button
           type="button"
@@ -156,14 +156,14 @@
         <p class="photo__text"></p>
       </div>
     </div>
-    <div class="avatar">
+    <div class="avatar overlay_type">
       <div class="avatar__modal">
         <img
           src="<%=require('./images/modal__close.svg')%>"
           alt=""
           class="avatar__close"
         />
-        <form action="post" class="avatar__form">
+        <form action="post" class="avatar__form" novalidate>
           <h2 class="avatar__title">Обновить аватар</h2>
           <input
             type="url"

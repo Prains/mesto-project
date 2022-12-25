@@ -35,8 +35,6 @@ for (var i = 0; i < initialElements.length; i++) {
   v.elements.append(createElement(initialElements[i]));
 }
 
-v.profilettl.textContent = 'Жак-Ив Кусто';
-v.profdesc.textContent = 'Исследователь океана';
 v.profilePicture.addEventListener('mouseover', () => {
   v.profileEditOverlay.style.visibility = 'visible';
 })
@@ -70,6 +68,8 @@ v.profileEditInput.addEventListener('change', () => {
 })
 
 v.profilebtn.addEventListener("click", function (e) {
+  v.modalname.value = v.profilettl.textContent;
+  v.modaldesc.value = v.profdesc.textContent;
   openPopup(v.modal);
 });
 
