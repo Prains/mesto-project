@@ -30,6 +30,12 @@ export const modalInputList = Array.from(
 export const elementInputList = Array.from(
   popupSubmit.querySelectorAll(".overlay__text")
 );
+export const modalErrorList = Array.from(
+  modalsubmit.querySelectorAll('.overlay__error')
+);
+export const elementErrorList = Array.from(
+  popupSubmit.querySelectorAll('.overlay__error')
+)
 export const elementButton = document.getElementById("elementbutton");
 export const profilePicture = document.querySelector('.profile__picture');
 export const profileEditOverlay = document.querySelector('.profile__edit');

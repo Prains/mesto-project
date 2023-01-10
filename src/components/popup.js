@@ -30,5 +30,5 @@ function closeIfEsc(tempPopup) {
     if (e.key === 'Escape') {
       closePopup(tempPopup);
     }
-  })
+  }, { once: true })
 }
