@@ -48,11 +48,9 @@ for (var i = 0; i < initialElements.length; i++) {
 }
 
 
-
 validateIt(v.modalInputList, v.modalButton, v.modalErrorList);
 validateIt(v.elementInputList, v.elementButton, v.elementErrorList);
 validateIt(v.profileEditInput, v.profileEditButton, v.profileEditError);
-
 
 
 v.profilebtn.addEventListener("click", function (e) {
