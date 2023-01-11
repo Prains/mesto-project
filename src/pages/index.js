@@ -1,129 +1,99 @@
 import './index.css';
-import * as v from '../components/variables.js'
-import { hasInvalid, validation, buttonValidation, validateIt } from '../components/validation.js'
+import { popupEditProfile, profilebtn, modalclose, modalsubmit, profilettl, profdesc, modalname, modaldesc, popupAddCard, addButton, addClose, popupSubmit, elementLink, elementTitle, elements, photoPopup, photoPopupClose, profilePicture, profileEditOverlay, profileEditCloseButton, profileEditForm, profileEditInput, profileEditModal, initialElements } from '../utils/constants.js'
+import { enableValidation } from '../components/validation.js'
 import { openPopup, closePopup } from '../components/popup.js'
 import { createElement } from '../components/element.js'
 
-v.profilePicture.addEventListener('mouseover', () => {
-  v.profileEditOverlay.style.visibility = 'visible';
+profilePicture.addEventListener('mouseover', () => {
+  profileEditOverlay.style.visibility = 'visible';
 })
 
-v.profileEditOverlay.addEventListener('mouseout', () => {
-  v.profileEditOverlay.style.visibility = 'hidden';
+profileEditOverlay.addEventListener('mouseout', () => {
+  profileEditOverlay.style.visibility = 'hidden';
 })
 
-v.profileEditOverlay.addEventListener('mouseover', () => {
-  v.profileEditOverlay.style.visibility = 'visible';
+profileEditOverlay.addEventListener('mouseover', () => {
+  profileEditOverlay.style.visibility = 'visible';
 })
 
-const initialElements = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
 
 for (var i = 0; i < initialElements.length; i++) {
-  v.elements.append(createElement(initialElements[i]));
+  elements.append(createElement(initialElements[i]));
 }
 
 
-validateIt(v.modalInputList, v.modalButton, v.modalErrorList);
-validateIt(v.elementInputList, v.elementButton, v.elementErrorList);
-validateIt(v.profileEditInput, v.profileEditButton, v.profileEditError);
+enableValidation();
 
 
-v.profilebtn.addEventListener("click", function (e) {
-  v.modalname.value = v.profilettl.textContent;
-  v.modaldesc.value = v.profdesc.textContent;
-  openPopup(v.modal);
+profilebtn.addEventListener("click", function (e) {
+  modalname.value = profilettl.textContent;
+  modaldesc.value = profdesc.textContent;
+  openPopup(popupEditProfile);
 });
 
-v.addButton.addEventListener("click", function (e) {
+addButton.addEventListener("click", function (e) {
   e.preventDefault()
-  buttonValidation(v.elementInputList, v.elementButton);
-  openPopup(v.popupEditProfile);
+  openPopup(popupAddCard);
 });
 
-v.photoPopupClose.addEventListener("click", function (e) {
-  closePopup(v.photoPopup);
+photoPopupClose.addEventListener("click", function (e) {
+  closePopup(photoPopup);
 });
 
-v.addClose.addEventListener("click", function (e) {
-  closePopup(v.popupEditProfile);
+addClose.addEventListener("click", function (e) {
+  closePopup(popupAddCard);
 });
 
-v.modalsubmit.addEventListener("submit", function (e) {
+modalsubmit.addEventListener("submit", function (e) {
   updateData(e);
-  closePopup(v.modal);
+  closePopup(popupEditProfile);
 });
 
-v.modalclose.addEventListener("click", function (e) {
-  closePopup(v.modal);
+modalclose.addEventListener("click", function (e) {
+  closePopup(popupEditProfile);
   resetData(e);
 });
 
-v.popupSubmit.addEventListener("submit", function (e) {
+popupSubmit.addEventListener("submit", function (e) {
   e.preventDefault();
-  let temp = {
-    name: v.elementTitle.value,
-    link: v.elementLink.value,
+  const temp = {
+    name: elementTitle.value,
+    link: elementLink.value,
   }
-  v.elements.prepend(createElement(temp));
-  v.popupSubmit.reset();
-  closePopup(v.popupEditProfile);
+  elements.prepend(createElement(temp));
+  popupSubmit.reset();
+  closePopup(popupAddCard);
 });
 
 
 function updateData(e) {
   e.preventDefault();
-  v.profilettl.textContent = v.modalname.value;
-  v.profdesc.textContent = v.modaldesc.value;
+  profilettl.textContent = modalname.value;
+  profdesc.textContent = modaldesc.value;
 }
 
 
 function resetData(e) {
-  v.modalname.value = v.profilettl.textContent;
-  v.modaldesc.value = v.profdesc.textContent;
+  modalname.value = profilettl.textContent;
+  modaldesc.value = profdesc.textContent;
 }
 
 
-v.profileEditForm.addEventListener('submit', (e) => {
+profileEditForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  v.profilePicture.src = v.profileEditInput.value;
-  closePopup(v.profileEditModal);
+  profilePicture.src = profileEditInput.value;
+  closePopup(profileEditModal);
 })
 
-v.profileEditOverlay.addEventListener('click', () => {
-  v.profileEditInput.value = v.profilePicture.src;
-  openPopup(v.profileEditModal);
+profileEditOverlay.addEventListener('click', () => {
+  profileEditInput.value = profilePicture.src;
+  openPopup(profileEditModal);
 });
 
-v.profileEditCloseButton.addEventListener('click', () => {
-  closePopup(v.profileEditModal);
-  v.profileEditInput.value = v.profilePicture.src;
+profileEditCloseButton.addEventListener('click', () => {
+  closePopup(profileEditModal);
+  profileEditInput.value = profilePicture.src;
 })
 
 /* token c8f1a46c-65ef-455d-a389-1ba7850544c9 */
 
-// александр, доброго времени суток! я поправил валидацию, но это все еще говнокод. пожалуйста, примите работу на итерацию, чтобы я опять понимал, куда двигаться.

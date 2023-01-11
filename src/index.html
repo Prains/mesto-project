@@ -50,7 +50,7 @@
     <footer class="footer">
       <p class="footer__text">© 2020 Mesto Russia</p>
     </footer>
-    <div class="overlay overlay_type" id="#modalfirst">
+    <div class="overlay popup_edit-profile" id="#modalfirst">
       <div class="overlay__modal">
         <button
           type="button"
@@ -71,6 +71,7 @@
             class="overlay__text"
             id="#modalname"
             name="profilename"
+            placeholder="Имя"
             minlength="2"
             maxlength="40"
             required
@@ -81,6 +82,7 @@
             class="overlay__text"
             id="#modaldesc"
             name="profiledescription"
+            placeholder="Вид деятельности"
             minlength="2"
             maxlength="200"
             required
@@ -98,7 +100,7 @@
         </form>
       </div>
     </div>
-    <div class="overlay overlay_type_popup">
+    <div class="overlay popup_add-card">
       <div class="overlay__modal">
         <button
           type="button"

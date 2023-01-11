@@ -1,4 +1,4 @@
-import { template, photoPopupImg, photoPopupText, photoPopup } from '../components/variables.js'
+import { template } from '../utils/constants'
 import { openCard } from './popup.js';
 export function createElement(data) {
     const element = template.querySelector(".element").cloneNode(true);
@@ -13,12 +13,7 @@ export function createElement(data) {
                 .querySelector(".element__heart")
                 .classList.toggle("element__heart_liked");
         });
-    image.addEventListener("click", function (e) {
-        let popup = {
-            overlay: photoPopup,
-            img: photoPopupImg,
-            text: photoPopupText
-        }
+    image.addEventListener("click", function (e) {F
         openCard(data, popup)
     });
 
