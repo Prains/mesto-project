@@ -39,7 +39,7 @@ export function toggleButtonState(inputList, button) {
   }
 }
 
-export function enableValidation() {
+export function makeValidationListeners(listOfInputs, button, listOfErrors) {
   for (let i = 0; i < listOfInputs.length; i++) {
     listOfInputs[i].addEventListener('input', () => {
       toggleButtonState(listOfInputs, button);
@@ -49,16 +49,7 @@ export function enableValidation() {
 }
 
 export function enableValidation() {
-  validateIt(modalInputList, modalButton, modalErrorList);
-  validateIt(elementInputList, elementButton, elementErrorList);
-  validateIt(profileEditInput, profileEditButton, profileEditError);
+  makeValidationListeners(modalInputList, modalButton, modalErrorList);
+  makeValidationListeners(elementInputList, elementButton, elementErrorList);
+  makeValidationListeners(profileEditInput, profileEditButton, profileEditError);
 }
-
-const validaton = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
-};

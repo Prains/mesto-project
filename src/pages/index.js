@@ -97,3 +97,5 @@ profileEditCloseButton.addEventListener('click', () => {
 
 /* token c8f1a46c-65ef-455d-a389-1ba7850544c9 */
 
+
+/* Александр, добрый вечер! в попапе поставил once:true вместо removeEventListeners. скажите пожалуйста, это ок? мне кажется правильном альтернативой */
