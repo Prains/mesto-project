@@ -13,8 +13,8 @@ export function createElement(data) {
                 .querySelector(".element__heart")
                 .classList.toggle("element__heart_liked");
         });
-    image.addEventListener("click", function (e) {F
-        openCard(data, popup)
+    image.addEventListener("click", function (e) {
+        openCard(data)
     });
 
     element

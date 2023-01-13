@@ -1,16 +1,15 @@
-
 export const popupEditProfile = document.querySelector(".popup_edit-profile");
 export const profilebtn = document.querySelector(".profile__button");
-export const modalclose = document.querySelector(".overlay__close");
-export const modalsubmit = document.querySelector(".overlay__form");
-export const profilettl = document.querySelector(".profile__title");
-export const profdesc = document.querySelector(".profile__subtitle");
-export const modalname = document.getElementById("#modalname");
-export const modaldesc = document.getElementById("#modaldesc");
+export const buttonCloseFormEditProfile = document.querySelector(".overlay__close");
+export const formEditProfile = document.querySelector(".overlay__form");
+export const userName = document.querySelector(".profile__title");
+export const userDescription = document.querySelector(".profile__subtitle");
+export const inputUserName = document.getElementById("modalname");
+export const inputUserDescription = document.getElementById("modaldesc");
 export const popupAddCard = document.querySelector(".popup_add-card");
 export const addButton = document.querySelector(".profile__add-button");
 export const addClose = document.querySelector(".overlay_popup__close");
-export const popupSubmit = document.querySelector(".popup-form");
+export const formAddCard = document.querySelector(".popup-form");
 export const template = document.querySelector(".element-template").content;
 export const elementLink = document.getElementById("#popuplink");
 export const elementTitle = document.getElementById("#popuptitle");
@@ -24,18 +23,6 @@ export const profDescErr = document.getElementById("profdescerr");
 export const addNameErr = document.getElementById("addnameerr");
 export const addDescErr = document.getElementById("adddescerr");
 export const modalButton = document.getElementById("modalbutton");
-export const modalInputList = Array.from(
-  modalsubmit.querySelectorAll(".overlay__text")
-);
-export const elementInputList = Array.from(
-  popupSubmit.querySelectorAll(".overlay__text")
-);
-export const modalErrorList = Array.from(
-  modalsubmit.querySelectorAll('.overlay__error')
-);
-export const elementErrorList = Array.from(
-  popupSubmit.querySelectorAll('.overlay__error')
-)
 export const elementButton = document.getElementById("elementbutton");
 export const profilePicture = document.querySelector('.profile__picture');
 export const profileEditOverlay = document.querySelector('.profile__edit');
@@ -71,3 +58,10 @@ export const initialElements = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+export const validationSelectors = {
+  formSelector: '.overlay__form',
+  inputSelector: '.overlay__text',
+  submitButtonSelector: '.overlay__button',
+  inactiveButtonClass: 'disabled',
+  inputErrorClass: '.overlay__error',
+}

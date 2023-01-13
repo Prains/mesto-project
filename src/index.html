@@ -69,29 +69,29 @@
           <input
             type="text"
             class="overlay__text"
-            id="#modalname"
+            id="modalname"
             name="profilename"
             placeholder="Имя"
             minlength="2"
             maxlength="40"
             required
           />
-          <p class="overlay__error" id="profnameerr"></p>
+          <p class="overlay__error modalname-error" id="profnameerr"></p>
           <input
             type="text"
             class="overlay__text"
-            id="#modaldesc"
+            id="modaldesc"
             name="profiledescription"
             placeholder="Вид деятельности"
             minlength="2"
             maxlength="200"
             required
           />
-          <p class="overlay__error" id="profdescerr"></p>
+          <p class="overlay__error modaldesc-error" id="profdescerr"></p>
           <button
             type="submit"
             name="overlay__button"
-            class="disabled"
+            class="overlay__button disabled"
             id="modalbutton"
             disabled
           >
@@ -118,27 +118,27 @@
           <input
             type="text"
             class="overlay__text"
-            id="#popuptitle"
+            id="popuptitle"
             name="addname"
             placeholder="Название"
             minlength="2"
             maxlength="30"
             required
           />
-          <p class="overlay__error" id="addnameerr"></p>
+          <p class="overlay__error popuptitle-error" id="popuptitle-error"></p>
           <input
             type="url"
             class="overlay__text"
-            id="#popuplink"
+            id="popuplink"
             name="adddescription"
             placeholder="Ссылка на картинку"
             required
           />
-          <p class="overlay__error" id="adddescerr"></p>
+          <p class="overlay__error popuplink-error" id="adddescerr"></p>
           <button
             type="submit"
             name="overlay__button"
-            class="disabled"
+            class="overlay__button disabled"
             id="elementbutton"
             disabled
           >
@@ -177,7 +177,7 @@
           <p class="overlay__error" id="avatarerror"></p>
           <button
             type="submit"
-            class="avatar__submit disabled profile__button"
+            class="avatar__submit overlay__button disabled profile__button"
             disabled
           >
             Сохранить

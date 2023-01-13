@@ -1,5 +1,5 @@
 import './index.css';
-import { popupEditProfile, profilebtn, modalclose, modalsubmit, profilettl, profdesc, modalname, modaldesc, popupAddCard, addButton, addClose, popupSubmit, elementLink, elementTitle, elements, photoPopup, photoPopupClose, profilePicture, profileEditOverlay, profileEditCloseButton, profileEditForm, profileEditInput, profileEditModal, initialElements } from '../utils/constants.js'
+import { validationSelectors, popupEditProfile, profilebtn, buttonCloseFormEditProfile, formEditProfile, userName, userDescription, inputUserName, inputUserDescription, popupAddCard, addButton, addClose, formAddCard, elementLink, elementTitle, elements, photoPopup, photoPopupClose, profilePicture, profileEditOverlay, profileEditCloseButton, profileEditForm, profileEditInput, profileEditModal, initialElements } from '../utils/constants.js'
 import { enableValidation } from '../components/validation.js'
 import { openPopup, closePopup } from '../components/popup.js'
 import { createElement } from '../components/element.js'
@@ -21,13 +21,12 @@ for (var i = 0; i < initialElements.length; i++) {
   elements.append(createElement(initialElements[i]));
 }
 
+enableValidation(validationSelectors);
 
-enableValidation();
 
-
-profilebtn.addEventListener("click", function (e) {
-  modalname.value = profilettl.textContent;
-  modaldesc.value = profdesc.textContent;
+profilebtn.addEventListener("click", function () {
+  inputUserName.value = userName.textContent;
+  inputUserDescription.value = userDescription.textContent;
   openPopup(popupEditProfile);
 });
 
@@ -44,38 +43,38 @@ addClose.addEventListener("click", function (e) {
   closePopup(popupAddCard);
 });
 
-modalsubmit.addEventListener("submit", function (e) {
-  updateData(e);
+formEditProfile.addEventListener("submit", function (e) {
+  updateUserData(e);
   closePopup(popupEditProfile);
 });
 
-modalclose.addEventListener("click", function (e) {
+buttonCloseFormEditProfile.addEventListener("click", function (e) {
   closePopup(popupEditProfile);
-  resetData(e);
+  fillInFormInputs();
 });
 
-popupSubmit.addEventListener("submit", function (e) {
+formAddCard.addEventListener("submit", function (e) {
   e.preventDefault();
-  const temp = {
+  const cardData = {
     name: elementTitle.value,
     link: elementLink.value,
   }
-  elements.prepend(createElement(temp));
-  popupSubmit.reset();
+  elements.prepend(createElement(cardData));
+  formAddCard.reset();
   closePopup(popupAddCard);
 });
 
 
-function updateData(e) {
+function updateUserData(e) {
   e.preventDefault();
-  profilettl.textContent = modalname.value;
-  profdesc.textContent = modaldesc.value;
+  userName.textContent = inputUserName.value;
+  userDescription.textContent = inputUserDescription.value;
 }
 
 
-function resetData(e) {
-  modalname.value = profilettl.textContent;
-  modaldesc.value = profdesc.textContent;
+function fillInFormInputs() {
+  inputUserName.value = userName.textContent;
+  inputUserDescription.value = userDescription.textContent;
 }
 
 
@@ -96,6 +95,3 @@ profileEditCloseButton.addEventListener('click', () => {
 })
 
 /* token c8f1a46c-65ef-455d-a389-1ba7850544c9 */
-
-
-/* Александр, добрый вечер! в попапе поставил once:true вместо removeEventListeners. скажите пожалуйста, это ок? мне кажется правильном альтернативой */
