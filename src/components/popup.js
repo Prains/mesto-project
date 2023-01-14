@@ -8,9 +8,6 @@ export function openPopup(popup) {
 
 export function closePopup(popup) {
   popup.classList.remove("overlay_opened");
-  document.removeEventListener('click', (e) => {
-    closeIfClickOnOverlay(e, tempPopup)
-  })
 }
 
 export function openCard(data, popup) {
@@ -21,9 +18,11 @@ export function openCard(data, popup) {
 }
 
 function setCloseByOverlayClickEventListener(tempPopup) {
-  document.addEventListener('click', (e) => {
-    closeIfClickOnOverlay(e, tempPopup)
-  });
+  setTimeout(() => {
+    document.addEventListener('click', (e) => {
+      closeIfClickOnOverlay(e, tempPopup)
+    }, { once: true });
+  }, 250)
 }
 
 function closeIfClickOnOverlay(e, popup) {
