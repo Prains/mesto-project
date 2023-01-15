@@ -25,13 +25,13 @@
             />
           </div>
           <img
-            src="<%=require('./images/profile__picture.jpg')%>"
+            src=""
             alt="фотография профиля"
             class="profile__picture"
           />
           <div class="profile__grid">
-            <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <p class="profile__subtitle">Исследователь океана</p>
+            <h1 class="profile__title"></h1>
+            <p class="profile__subtitle"></p>
             <button
               type="button"
               name="profile__button"
@@ -158,7 +158,7 @@
         <p class="photo__text"></p>
       </div>
     </div>
-    <div class="avatar overlay_type">
+    <div class="avatar overlay_type overlay">
       <div class="avatar__modal">
         <img
           src="<%=require('./images/modal__close.svg')%>"
@@ -170,11 +170,11 @@
           <input
             type="url"
             required
-            class="avatar__input"
-            id="avatarinput"
+            class="avatar__input overlay__text"
+            id="avatar"
             placeholder="Ссылка на новую аватарку"
           />
-          <p class="overlay__error" id="avatarerror"></p>
+          <p class="overlay__error" id="avatar-error"></p>
           <button
             type="submit"
             class="avatar__submit overlay__button disabled profile__button"

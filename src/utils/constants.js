@@ -29,35 +29,9 @@ export const profileEditOverlay = document.querySelector('.profile__edit');
 export const profileEditModal = document.querySelector('.avatar');
 export const profileEditCloseButton = document.querySelector('.avatar__close');
 export const profileEditForm = document.querySelector('.avatar__form');
-export const profileEditInput = document.getElementById('avatarinput');
+export const profileEditInput = document.getElementById('avatar');
 export const profileEditButton = document.querySelector('.avatar__submit');
 export const profileEditError = document.getElementById('avatarerror');
-export const initialElements = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
 export const validationSelectors = {
   formSelector: '.overlay__form',
   inputSelector: '.overlay__text',
