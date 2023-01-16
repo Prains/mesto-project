@@ -54,7 +54,6 @@ addClose.addEventListener("click", function (e) {
 
 formEditProfile.addEventListener("submit", function (e) {
   updateUserData(e);
-  closePopup(popupEditProfile);
 });
 
 buttonCloseFormEditProfile.addEventListener("click", function (e) {
@@ -69,7 +68,6 @@ formAddCard.addEventListener("submit", function (e) {
     link: elementLink.value,
   }
   addNewCard(cardData).then((data) => {
-    console.log(data)
     elements.prepend(createElement(data, userId));
     formAddCard.reset();
     closePopup(popupAddCard);
@@ -86,6 +84,7 @@ function updateUserData(e) {
   sendProfileData(profileData).then((res) => {
     userName.textContent = res.name;
     userDescription.textContent = res.about;
+    closePopup(popupEditProfile);
   })
 }
 
@@ -100,22 +99,16 @@ profileEditForm.addEventListener('submit', (e) => {
   e.preventDefault();
   updateProfileAvatar(profileEditInput.value).then((res) => {
     profilePicture.src = res.avatar;
+    closePopup(profileEditModal);
   })
-  profilePicture.src = profileEditInput.value;
-  closePopup(profileEditModal);
 })
 
 profileEditOverlay.addEventListener('click', () => {
-  profileEditInput.value = profilePicture.src;
   openPopup(profileEditModal);
 });
 
 profileEditCloseButton.addEventListener('click', () => {
   closePopup(profileEditModal);
-  updateProfileAvatar(profileEditInput.value).then((res) => {
-    console.log(res)
-  })
-  profileEditInput.value = profilePicture.src;
 })
 
 /* token c8f1a46c-65ef-455d-a389-1ba7850544c9 */

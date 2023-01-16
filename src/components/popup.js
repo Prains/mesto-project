@@ -1,12 +1,14 @@
 import { photoPopupImg, photoPopupText, photoPopup } from '../utils/constants'
 
+const popups = document.querySelectorAll('.overlay');
+
 export function openPopup(popup) {
+  document.addEventListener('keyup', closeByEsc)
   popup.classList.add("overlay_opened");
-  setCloseByOverlayClickEventListener(popup);
-  setCloseByEscEventListener(popup);
 }
 
 export function closePopup(popup) {
+  document.removeEventListener('keyup', closeByEsc)
   popup.classList.remove("overlay_opened");
 }
 
@@ -17,24 +19,15 @@ export function openCard(data, popup) {
   openPopup(photoPopup)
 }
 
-function setCloseByOverlayClickEventListener(tempPopup) {
-  setTimeout(() => {
-    document.addEventListener('click', (e) => {
-      closeIfClickOnOverlay(e, tempPopup)
-    }, { once: true });
-  }, 250)
+function closeByEsc(e) {
+  const openedPopup = document.querySelector('.overlay_opened')
+  if (e.key === 'Escape') {
+    closePopup(openedPopup);
+  }
 }
 
-function closeIfClickOnOverlay(e, popup) {
-  if (e.target.classList.contains('overlay')) {
-    closePopup(popup)
-  };
-}
-
-function setCloseByEscEventListener(tempPopup) {
-  document.addEventListener('keyup', (e) => {
-    if (e.key === 'Escape') {
-      closePopup(tempPopup);
-    }
-  }, { once: true })
-}
+popups.forEach((popup) => {
+  popup.addEventListener('mousedown', (evt) => {
+    if (evt.target.classList.contains('overlay_opened')) closePopup(popup);
+  })
+})

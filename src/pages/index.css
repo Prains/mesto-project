@@ -51,16 +51,14 @@
 @import "../blocks/overlay/_photo/__img/photo__img.css";
 @import "../blocks/overlay/_photo/__text/photo__text.css";
 /* disabled */
-@import '../blocks/disabled/disabled.css';
+@import "../blocks/disabled/disabled.css";
 /* avatar */
-@import '../blocks/avatar/avatar.css';
-@import '../blocks/avatar/__close/avatar__close.css';
-@import '../blocks/avatar/__form/avatar__form.css';
-@import '../blocks/avatar/__input/avatar__input.css';
-@import '../blocks/avatar/__title/avatar__title.css';
-@import '../blocks/avatar/__modal/avatar__modal.css';
-
-
+@import "../blocks/avatar/avatar.css";
+@import "../blocks/avatar/__close/avatar__close.css";
+@import "../blocks/avatar/__form/avatar__form.css";
+@import "../blocks/avatar/__input/avatar__input.css";
+@import "../blocks/avatar/__title/avatar__title.css";
+@import "../blocks/avatar/__modal/avatar__modal.css";
 
 @media screen and (max-width: 767px) {
   .avatar__modal {
@@ -83,4 +81,12 @@
     min-width: 238px;
     margin-bottom: 25px;
   }
+}
+
+.error {
+  border-top: 1px solid red !important;
+}
+
+.unerror {
+  border-top: 1px solid #cccccc !important;
 }
