@@ -1,7 +1,7 @@
 import './index.css';
 import { validationSelectors, popupEditProfile, profilebtn, buttonCloseFormEditProfile, formEditProfile, userName, userDescription, inputUserName, inputUserDescription, popupAddCard, addButton, addClose, formAddCard, elementLink, elementTitle, elements, photoPopup, photoPopupClose, profilePicture, profileEditOverlay, profileEditCloseButton, profileEditForm, profileEditInput, profileEditModal } from '../utils/constants.js'
 import { enableValidation } from '../components/validation.js'
-import { openPopup, closePopup } from '../components/popup.js'
+import { openPopup, closePopup } from '../components/Modal.js'
 import { createElement } from '../components/Card.js'
 import { addNewCard, getInitialCards, getInitialProfileData, sendProfileData, updateProfileAvatar } from '../components/api';
 
