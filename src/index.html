@@ -24,11 +24,7 @@
               class="profile__editbutton"
             />
           </div>
-          <img
-            src=""
-            alt="фотография профиля"
-            class="profile__picture"
-          />
+          <img src="" alt="фотография профиля" class="profile__picture" />
           <div class="profile__grid">
             <h1 class="profile__title"></h1>
             <p class="profile__subtitle"></p>
@@ -74,6 +70,8 @@
             placeholder="Имя"
             minlength="2"
             maxlength="40"
+            pattern="^[а-яА-ЯёЁa-zA-Z\s_-]+$"
+            data-error-message="Разрешены только латинские буквы, кириллические буквы, знаки дефиса и пробелы."
             required
           />
           <p class="overlay__error modalname-error" id="profnameerr"></p>
@@ -85,6 +83,8 @@
             placeholder="Вид деятельности"
             minlength="2"
             maxlength="200"
+            pattern="^[а-яА-ЯёЁa-zA-Z\s_-]+$"
+            data-error-message="Разрешены только латинские буквы, кириллические буквы, знаки дефиса и пробелы."
             required
           />
           <p class="overlay__error modaldesc-error" id="profdescerr"></p>
@@ -123,6 +123,7 @@
             placeholder="Название"
             minlength="2"
             maxlength="30"
+            pattern="^[а-яА-ЯёЁa-zA-Z\s_-]+$"
             required
           />
           <p class="overlay__error popuptitle-error" id="popuptitle-error"></p>

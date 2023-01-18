@@ -8,7 +8,7 @@ export function createElement(data, userId) {
     const likeCounter = element.querySelector(".element__counter");
     const heart = element.querySelector(".element__heart");
     const trash = element.querySelector(".element__trash");
-    const likeCounts = data.likes.length  
+    const likeCounts = data.likes.length
 
     likeCounter.textContent = likeCounts;
     element.querySelector(".element__title").textContent = data.name;

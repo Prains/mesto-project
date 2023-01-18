@@ -2,7 +2,7 @@ import './index.css';
 import { validationSelectors, popupEditProfile, profilebtn, buttonCloseFormEditProfile, formEditProfile, userName, userDescription, inputUserName, inputUserDescription, popupAddCard, addButton, addClose, formAddCard, elementLink, elementTitle, elements, photoPopup, photoPopupClose, profilePicture, profileEditOverlay, profileEditCloseButton, profileEditForm, profileEditInput, profileEditModal } from '../utils/constants.js'
 import { enableValidation } from '../components/validation.js'
 import { openPopup, closePopup } from '../components/popup.js'
-import { createElement } from '../components/element.js'
+import { createElement } from '../components/Card.js'
 import { addNewCard, getInitialCards, getInitialProfileData, sendProfileData, updateProfileAvatar } from '../components/api';
 
 profilePicture.addEventListener('mouseover', () => {
@@ -99,6 +99,7 @@ profileEditForm.addEventListener('submit', (e) => {
   e.preventDefault();
   updateProfileAvatar(profileEditInput.value).then((res) => {
     profilePicture.src = res.avatar;
+    profileEditForm.reset();
     closePopup(profileEditModal);
   })
 })
