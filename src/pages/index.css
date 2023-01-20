@@ -83,18 +83,15 @@
   }
 }
 
-.error {
+.overlay__error-error {
   border-top: 1px solid red !important;
 }
 
-.unerror {
-  border-top: 1px solid #cccccc !important;
-}
 
-.visible {
+.overlay__avatar-visible {
   visibility: visible;
 }
 
-.unvisible {
+.overlay__avatar-unvisible {
   visibility: hidden;
 }

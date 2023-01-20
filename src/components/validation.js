@@ -24,15 +24,13 @@ export function checkInputValidity(formElement, inputElement, settings) {
 
 function addErrorText(formElement, inputElement, errorMessage, settings) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  errorElement.classList.remove('unerror')
-  errorElement.classList.add('error');
+  errorElement.classList.add(settings.inputErrorVisible);
   errorElement.textContent = errorMessage;
 }
 
 function removeErrorText(formElement, inputElement, settings) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  errorElement.classList.remove('error')
-  errorElement.classList.add('unerror');
+  errorElement.classList.remove(settings.inputErrorVisible)
   errorElement.textContent = '';
 }
 

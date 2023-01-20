@@ -38,4 +38,5 @@ export const validationSelectors = {
   submitButtonSelector: '.overlay__button',
   inactiveButtonClass: 'disabled',
   inputErrorClass: '.overlay__error',
+  inputErrorVisible: 'overlay__error-error'
 }

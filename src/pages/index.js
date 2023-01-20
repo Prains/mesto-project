@@ -6,18 +6,18 @@ import { createElement } from '../components/card.js'
 import { addNewCard, getInitialCards, getInitialProfileData, sendProfileData, updateProfileAvatar } from '../components/api';
 
 profilePicture.addEventListener('mouseover', () => {
-  profileEditOverlay.classList.remove('hidden')
-  profileEditOverlay.classList.add('visible')
+  profileEditOverlay.classList.remove('overlay__avatar-unvisible')
+  profileEditOverlay.classList.add('overlay__avatar-visible')
 })
 
 profileEditOverlay.addEventListener('mouseout', () => {
-  profileEditOverlay.classList.add('hidden')
-  profileEditOverlay.classList.remove('visible')
+  profileEditOverlay.classList.add('overlay__avatar-unvisible')
+  profileEditOverlay.classList.remove('overlay__avatar-visible')
 })
 
 profileEditOverlay.addEventListener('mouseover', () => {
-  profileEditOverlay.classList.add('visible')
-  profileEditOverlay.classList.remove('hidden')
+  profileEditOverlay.classList.add('overlay__avatar-visible')
+  profileEditOverlay.classList.remove('overlay__avatar-unvisible')
 })
 
 let userId
