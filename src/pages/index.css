@@ -90,3 +90,11 @@
 .unerror {
   border-top: 1px solid #cccccc !important;
 }
+
+.visible {
+  visibility: visible;
+}
+
+.unvisible {
+  visibility: hidden;
+}

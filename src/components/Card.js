@@ -1,6 +1,6 @@
 import { template } from '../utils/constants'
 import { addLikeOnCard, removeCardFromData, removeLikeFromCard } from './api';
-import { openCard } from './Modal.js';
+import { openCard } from './modal.js';
 
 export function createElement(data, userId) {
     const element = template.querySelector(".element").cloneNode(true);
@@ -30,12 +30,16 @@ export function createElement(data, userId) {
             removeLikeFromCard(data).then((data) => {
                 likeCounter.textContent = data.likes.length;
                 heart.classList.remove("element__heart_liked");
-            })
+            }).catch((err) => {
+                console.error(err);
+              })
         } else {
             addLikeOnCard(data).then((data) => {
                 likeCounter.textContent = data.likes.length;
                 heart.classList.add("element__heart_liked");
-            })
+            }).catch((err) => {
+                console.error(err);
+              })
         }
     });
 
@@ -46,7 +50,9 @@ export function createElement(data, userId) {
     trash.addEventListener("click", function (e) {
         removeCardFromData(data).then(() => {
             element.remove();
-        })
+        }).catch((err) => {
+            console.error(err);
+          })
     });
 
     return element;

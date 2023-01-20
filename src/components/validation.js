@@ -37,7 +37,6 @@ function removeErrorText(formElement, inputElement, settings) {
 }
 
 export function toggleButtonState(inputList, buttonElement, settings) {
-  console.log(hasInvalidInput(inputList))
   if (hasInvalidInput(inputList) === false) {
     buttonElement.disabled = true;
     buttonElement.classList.add(settings.inactiveButtonClass);
@@ -64,4 +63,9 @@ export function enableValidation(settings) {
   formList.forEach((formElement) => {
     makeValidationListeners(formElement, settings);
   });
+}
+
+export function resetButton(button) {
+  button.disabled = true;
+  button.classList.add('disabled');
 }

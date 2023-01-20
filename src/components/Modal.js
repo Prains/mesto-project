@@ -4,11 +4,13 @@ const popups = document.querySelectorAll('.overlay');
 
 export function openPopup(popup) {
   document.addEventListener('keyup', closeByEsc)
+  document.activePopup = popup;
   popup.classList.add("overlay_opened");
 }
 
 export function closePopup(popup) {
   document.removeEventListener('keyup', closeByEsc)
+  document.activePopup = '';
   popup.classList.remove("overlay_opened");
 }
 
@@ -20,9 +22,8 @@ export function openCard(data, popup) {
 }
 
 function closeByEsc(e) {
-  const openedPopup = document.querySelector('.overlay_opened')
   if (e.key === 'Escape') {
-    closePopup(openedPopup);
+    closePopup(document.activePopup);
   }
 }
 
