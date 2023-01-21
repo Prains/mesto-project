@@ -1,23 +1,20 @@
 import './index.css';
-import { validationSelectors, popupEditProfile, profilebtn, buttonCloseFormEditProfile, formEditProfile, userName, userDescription, inputUserName, inputUserDescription, popupAddCard, addButton, addClose, formAddCard, elementLink, elementTitle, elements, photoPopup, photoPopupClose, profilePicture, profileEditOverlay, profileEditCloseButton, profileEditForm, profileEditInput, profileEditModal } from '../utils/constants.js'
+import { validationSelectors, popupEditProfile, profilebtn, buttonCloseFormEditProfile, formEditProfile, userName, userDescription, inputUserName, inputUserDescription, popupAddCard, addButton, addClose, formAddCard, elementLink, elementTitle, elementButton, elements, photoPopup, photoPopupClose, profilePicture, profileEditOverlay, profileEditCloseButton, profileEditForm, profileEditInput, profileEditModal } from '../utils/constants.js'
 import { enableValidation, resetButton } from '../components/validation.js'
 import { openPopup, closePopup } from '../components/modal.js'
 import { createElement } from '../components/card.js'
 import { addNewCard, getInitialCards, getInitialProfileData, sendProfileData, updateProfileAvatar } from '../components/api';
 
 profilePicture.addEventListener('mouseover', () => {
-  profileEditOverlay.classList.remove('overlay__avatar-unvisible')
   profileEditOverlay.classList.add('overlay__avatar-visible')
 })
 
 profileEditOverlay.addEventListener('mouseout', () => {
-  profileEditOverlay.classList.add('overlay__avatar-unvisible')
   profileEditOverlay.classList.remove('overlay__avatar-visible')
 })
 
 profileEditOverlay.addEventListener('mouseover', () => {
   profileEditOverlay.classList.add('overlay__avatar-visible')
-  profileEditOverlay.classList.remove('overlay__avatar-unvisible')
 })
 
 let userId
@@ -63,16 +60,15 @@ buttonCloseFormEditProfile.addEventListener("click", function (e) {
 });
 
 formAddCard.addEventListener("submit", function (e) {
-  const formSubmitButton = formAddCard.querySelector('.overlay__button')
-  formSubmitButton.textContent = 'Сохранение...'
+  elementButton.textContent = 'Сохранение...'
   e.preventDefault();
   const cardData = {
     name: elementTitle.value,
     link: elementLink.value,
   }
   addNewCard(cardData).then((data) => {
-    formSubmitButton.textContent = 'Сохранить'
-    resetButton(formSubmitButton)
+    elementButton.textContent = 'Создать'
+    resetButton(elementButton)
     elements.prepend(createElement(data, userId));
     formAddCard.reset();
     closePopup(popupAddCard);
