@@ -1,6 +1,6 @@
 import { template } from '../utils/constants'
 import { addLikeOnCard, removeCardFromData, removeLikeFromCard } from './api';
-import { openCard } from './moda.js';
+import { openCard } from './modal.js';
 
 export function createElement(data, userId) {
     const element = template.querySelector(".element").cloneNode(true);
